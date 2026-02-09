@@ -8,8 +8,9 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["storage", "scripting", "activeTab", "tabs", "sidePanel", "tabCapture"],
-  "host_permissions": ["<all_urls>"],
+"permissions": ["storage", "scripting", "activeTab", "tabs", "sidePanel", "identity"],
+"optional_permissions": ["audioCapture"],
+"optional_host_permissions": ["http://*/*", "https://*/*"],
   "background": {
     "service_worker": "background.js",
     "type": "module"
