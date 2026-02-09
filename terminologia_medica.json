@@ -1,0 +1,2171 @@
+[
+  {
+    "categoria": "Antecedentes",
+    "clave": "infarto agudo de miocardio",
+    "sinonimos": [
+      "iam",
+      "infarto cardiaco",
+      "iamcest",
+      "iamsest",
+      "ataque al corazon"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "SCA"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "angina estable",
+    "sinonimos": [
+      "angor cronico estable",
+      "angina cronica estable",
+      "ace",
+      "cic"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "Enfermedad coronaria cronica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "insuficiencia cardiaca",
+    "sinonimos": [
+      "icc",
+      "ic cronica"
+    ],
+    "subcategoria": "Insuficiencia cardiaca", "sub2": "ic cronica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "internacion por IC",
+    "sinonimos": [
+      "ica",
+      "eap",
+      "fallo cardiaco",
+      "falla cardiaca",
+      "internacion por icc",
+      "balance negativo",
+      "internacion por falla",
+      "internada por icc",
+      "internado por icc",
+      "internado por congestion",
+      "internada por congestion"
+    ],
+    "subcategoria": "insuficiencia cardica", "sub2": "ic aguda"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "fibrilacion auricular",
+    "sinonimos": [
+      "fa",
+      "fib a",
+      "fap",
+      "faarv"
+    ],
+    "subcategoria": "Taquiarritmias", "sub2": "taquicardia supraventricular"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aleteo auricular",
+    "sinonimos": [
+      "aa",
+      "aaf",
+      "aa alta rta"
+    ],
+    "subcategoria": "Taquiarritmias", "sub2": "taquicardia supraventricular"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "arritmia supraventricular",
+    "sinonimos": [
+      "taquicardia supraventricular",
+      "taquicardia paroxistica",
+      "tpsv",
+      "tqsv",
+      "taquisupra",
+      "taquicardia auricular",
+      "taquicardia paroxistica supraventricular"
+    ],
+  "subcategoria": "Taquiarritmias", "sub2": "taquicardia supraventricular"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "taquicardia ventricular",
+    "sinonimos": [
+      "tv",
+      "taquicardia monomorfica",
+      "taquicardia polimorfica"
+    ],
+"subcategoria": "Taquiarritmias", "sub2": "arritmia ventricular"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "bloqueo de rama izquierda",
+    "sinonimos": [
+      "bcri",
+      "bloqueo de rama izquierda",
+      "rama izquierda",
+      "brdiz"
+    ],
+    "subcategoria": "Trastornos de la conduccion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "bloqueo de rama derecha",
+    "sinonimos": [
+      "brd",
+      "bcrd",
+      "bloqueo de rama derecha"
+    ],
+    "subcategoria": "Trastornos de la conduccion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "accidente cerebrovascular",
+    "sinonimos": [
+      "acv",
+      "ictus",
+      "embolia cerebral",
+      "ait", 
+      "isquemia cerebral",
+      "infarto cerebral",
+      "derrame cerebral"
+    ],
+    "subcategoria": "arteriopatia periferica", "sub2": "acv isquemico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "enfermedad arterial periferica",
+    "sinonimos": [
+      "claudicacion intermitente",
+      "angioplastia periferica"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "miocardiopatia dilatada",
+    "sinonimos": [
+      "mcd",
+      "mcpd"
+    ],
+    "subcategoria": "Insuficiencia cardiaca", "sub2": "ic cronica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "miocardiopatia hipertrofica",
+    "sinonimos": [
+      "mch",
+      "mcph"
+    ],
+    "subcategoria": "Miocardiopatia"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "amiloidosis",
+    "sinonimos": [
+      "amiloidotica",
+      "amiloide"
+    ],
+    "subcategoria": "Miocardiopatia"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "estenosis aortica",
+    "sinonimos": [
+      "eao"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula aortica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aorta bicuspide",
+    "sinonimos": [
+      "eao biscuspide",
+      "ao bicuspide",
+      "bicuspide"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula aortica"
+  },
+    {
+    "categoria": "Antecedentes",
+    "clave": "insuficiencia aortica",
+    "sinonimos": [
+      "iao",
+      "insuf aortica"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula aortica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "prolapso mitral",
+    "sinonimos": [
+      "pvm"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula mitral"
+  },
+    {
+    "categoria": "Antecedentes",
+    "clave": "estenosis mitral",
+    "sinonimos": [
+      "em",
+      "estenosis reumatica"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula mitral"
+  },
+    {
+    "categoria": "Antecedentes",
+    "clave": "insuficiencia mitral",
+    "sinonimos": [
+      "im severa",
+      "im moderada"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula mitral"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "trombosis venosa profunda",
+    "sinonimos": [
+      "tvp"
+    ],
+    "subcategoria": "Tromboembólica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "embolia pulmonar",
+    "sinonimos": [
+      "tep",
+      "tromboembolismo pulmonar",
+      "infarto pulmonar",
+      "embolia de pulmon",
+      "embolismo pulmonar"
+    ],
+    "subcategoria": "Tromboembólica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "arritmia ventricular",
+    "sinonimos": [
+      "taquicardia ventricular",
+      "tv"
+    ],
+    "subcategoria": "Arritmias"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "bloqueo av",
+    "sinonimos": [
+      "bloqueo av",
+      "bavc",
+      "wenckebach"
+    ],
+    "subcategoria": "Bradiarritmias"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cardiopatia isquemica necrotica",
+    "sinonimos": [
+      "cic",
+      "mcpd isquemico-necrotica"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "Enfermedad coronaria cronica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "sindrome coronario agudo",
+    "sinonimos": [
+      "sca"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "SCA"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "shock cardiogenico",
+    "sinonimos": [
+      "fallo cardiaco agudo"
+    ]
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "endocarditis",
+    "sinonimos": [
+      "infeccion valvular"
+    ]
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "pericarditis",
+    "sinonimos": [
+      "inflamacion pericardica"
+    ],
+    "subcategoria": "Pericardio"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "sindrome wolff-parkinson-white",
+    "sinonimos": [
+      "wpw",
+      "swpw"
+    ],
+    "subcategoria": "Trastornos de la conduccion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "miocarditis",
+    "sinonimos": [
+      "inflamacion del miocardio"
+    ],
+    "subcategoria": "Miocardiopatia"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "taponamiento cardiaco",
+    "sinonimos": [
+      "derrame pericardico"
+    ],
+    "subcategoria": "Pericardio"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aneurisma aortico ascendente",
+    "sinonimos": [
+      "dilatacion aortica",
+      "aneurisma aorta ascendente",
+      "aneurisma de aorta"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aneurisma aortico abdominal",
+    "sinonimos": [
+      "aaa infrarrenal",
+      "aaa infrarenal",
+      "aneurisma ao abdominal"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aneurisma iliaca",
+    "sinonimos": [
+      "aneurisma iliaco"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "diseccion aortica",
+    "sinonimos": [
+      "desgarro aortico"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "sindrome de takotsubo",
+    "sinonimos": [
+      "cardiomiopatia por estres",
+      "takotsubo"
+    ]
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "minoca",
+    "sinonimos": [
+      "infarto con coronarias normales"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "SCA"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "hipertension pulmonar",
+    "sinonimos": [
+      "htp"
+    ],
+    "subcategoria": "Pulmonar"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cor pulmonale",
+    "sinonimos": [
+      "cardiopatia pulmonar"
+    ],
+    "subcategoria": "Pulmonar"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "angioplastia coronaria",
+    "sinonimos": [
+      "atc",
+      "stent coronario",
+      "1 des",
+      "2 des",
+      "3 des",
+      "atc multiple",
+      "angioplastia simple",
+      "angioplastia con balon",
+      "balon con droga",
+      "implante de stent",
+      "implante DES",
+      "intervencion coronaria percutanea",
+      "ptca"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "revascularizacion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "bypass aortocoronario",
+    "sinonimos": [
+      "crm",
+      "cirugia de revascularizacion",
+      "cabg"
+    ],
+    "subcategoria": "Enfermedad coronaria", "sub2": "revascularizacion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "valvuloplastia aortica",
+    "sinonimos": [
+      "dilatacion valvular aortica"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula aortica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "reemplazo valvular aortico",
+    "sinonimos": [
+      "rvao",
+      "RVAO",
+      "tavi",
+      "savr"
+    ],
+    "subcategoria": "Valvulopatías", "sub2": "valvula aortica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "ablacion por cateter",
+    "sinonimos": [
+      "arf",
+      "ablacion con radiofrecuencia",
+      "crioablacion"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "marcapasos definitivo",
+    "sinonimos": [
+      "mcp",
+      "implante de marcapasos"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cardiodesfibrilador implantable",
+    "sinonimos": [
+      "cdi"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "estudio electrofisiologico",
+    "sinonimos": [
+      "eef"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cardioversion electrica",
+    "sinonimos": [
+      "cve",
+      "cardioversion"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cateterismo cardiaco derecho",
+    "sinonimos": [
+      "cateterismo pulmonar"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "pericarditis",
+    "sinonimos": [
+      "drenaje pericardico",
+      "miopericarditis"
+    ],
+    "subcategoria": "Pericardio"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "embolizacion de arterias coronarias",
+    "sinonimos": [
+      "oclusion coronaria"
+    ],
+    "subcategoria": "Procedimientos/Dispositivos"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "cirugia de aneurisma aortico",
+    "sinonimos": [
+      "reemplazo aortico"
+    ],
+    "subcategoria": "Aorta/Periférico"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "ateromatosis carotidea",
+    "sinonimos": [
+      "cirugia de carotida",
+      "placa carotidea",
+      "estenosis carotidea",
+      "stent carotideo",
+      "trombosis carotidea ",
+      "oclusion carotidea"
+    ],
+    "subcategoria": "arteriopatia periferica"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "bypass femoropopliteo",
+    "sinonimos": [
+      "revascularizacion arterial"
+    ],
+    "subcategoria": "arteriopatia periferica", "sub2": "revascularizacion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "aneurisma de aorta abdominal",
+    "sinonimos": [
+      "evar",
+      "aaa",
+      "aaa reparado",
+      "endoproptesis aaa"
+    ],
+    "subcategoria": "arteriopatia periferica", "sub2": "revascularizacion"
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "anticoagulacion",
+    "sinonimos": [
+      "aco",
+      "doac",
+      "apixaban",
+      "xarelto",
+      "sintrom",
+      "avk",
+      "azecar",
+      "warfarina",
+      "rivaroxa",
+      "rivaroxaban"
+    ]
+  },
+  {
+    "categoria": "Antecedentes",
+    "clave": "terapia trombolitica",
+    "sinonimos": [
+      "stk",
+      "estrepto",
+      "tpa",
+      "rtpa",
+      "alteplase",
+      "trombolisis",
+      "trombolizado",
+      "trombolizada"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "diabetes mellitus tipo 1",
+    "sinonimos": [
+      "dm1",
+      "dbt 1",
+      "dbt tipo 1",
+      "diabetico tipo 1",
+      "dbt ir"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "diabetes mellitus tipo 2",
+    "sinonimos": [
+      "diabetico",
+      "diabetica",
+      "diabetes",
+      "dbttii",
+      "diabetes no ir",
+      "dm2",
+      "dbt",
+      "dbt2",
+      "dbt tipo 2",
+      "dbt 2",
+      "diabetes tipo 2",
+      "dbt no ir",
+      "metformina"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "hipertension arterial",
+    "sinonimos": [
+      "hta",
+      "hipertension",
+      "hipertenso",
+      "hipertensa",
+      "hipertensiva",
+      "presion alta"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "dislipidemia",
+    "sinonimos": [
+      "dislipemia",
+      "dlp",
+      "DLP",
+      "dislipemico",
+      "dislipemica",
+      "hipercolesterolemia",
+      "colesterol alto"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "hipertrigliceridemia",
+    "sinonimos": [
+      "trigliceridos elevados",
+      "hipertg",
+      "tg elevado",
+      "tag",
+      "hipertrigliceridos"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "tabaquismo",
+    "sinonimos": [
+      "tbq",
+      "exTBQ",
+      "ex-TBQ",
+      "ex fumador",
+      "ex tabaquista",
+      "ex fumadora",
+      "extbq",
+      "fumadora",
+      "fumador",
+      "tabaquista",
+      "extabaquista",
+      "consumo de tabaco"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "epoc",
+    "sinonimos": [
+      "enfermedad pulmonar obstructiva",
+      "enfisema",
+      "bronquitis cronica"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "obesidad",
+    "sinonimos": [
+      "obs",
+      "obeso",
+      "obesa",
+      "indice de masa corporal elevado",
+      "sobrepeso",
+      "ob",
+      "imc >27"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "sedentarismo",
+    "sinonimos": [
+      "falta de actividad fisica",
+      "sdt"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "dieta no saludable",
+    "sinonimos": [
+      "dieta hipercalorica"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "consumo excesivo de alcohol",
+    "sinonimos": [
+      "alcoholismo",
+      "enolismo",
+      "alcohol",
+      "consumo oh",
+      "ex oh",
+      "enolista",
+      "acholico",
+      "alcoholica"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "consumo drogas",
+    "sinonimos": [
+      "cocaina",
+      "cocainomano",
+      "adiccion",
+      "habitos toxicos"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "estres cronico",
+    "sinonimos": [
+      "tension emocional persistente",
+      "estres",
+      "stress"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "historia familiar cardiovascular",
+    "sinonimos": [
+      "antecedentes familiares patologicos",
+      "padre con enf coronaria",
+      "padre iam",
+      "padre bypass",
+      "padre operado crm",
+      "padre con stent",
+      "hno muerte subita",
+      "hermano operado CRM",
+      "madre DBT",
+      "madre diabetica",
+      "padre infarto",
+      "padre cardiopatia",
+      "antecedentes familiares de enfermedad coronaria",
+      "antecedentes familiares de infarto",
+      "antecedentes familiares de accidente cerebrovascular",
+      "antecedentes familiares de hipertension arterial",
+      "antecedentes familiares de diabetes"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "apnea del sueño",
+    "sinonimos": [
+      "sahos"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "enfermedad renal cronica",
+    "sinonimos": [
+      "erc",
+      "irc",
+      "dialisis",
+      "enf renal",
+      "enf renal cronica",
+      "sdme renal",
+      "enfermo renal"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "sindrome de ovario poliquistico",
+    "sinonimos": [
+      "sop"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "hiperuricemia",
+    "sinonimos": [
+      "acido urico elevado"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "sindrome de apnea obstructiva",
+    "sinonimos": [
+      "saos"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "hipotiroidismo",
+    "sinonimos": [
+      "hipotiroideo",
+      "hipotiroidea",
+      "tsh alta",
+      "tsh alterada",
+      "hipotiroidismo subclinico",
+      "hipotiroidismo primario",
+      "hipotiroidismo secundario"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "hipertiroidismo",
+    "sinonimos": [
+      "hipertiroidismo subclinico",
+      "tsh baja",
+      "hipertiroidismo primario",
+      "hipertiroidismo secundario"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "enfermedad autoinmune",
+    "sinonimos": [
+      "lupus",
+      "artritis reumatoide",
+      "ar",
+      "artritis",
+      "enfermedad de graves",
+      "enfermedad de hashimoto",
+      "tiroiditis autoinmune"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "quimioterapia",
+    "sinonimos": [
+      "qt",
+      "quimio",
+      "quimio adyuvante",
+      "quimio neoadyuvante"
+    ]
+  },
+  {
+    "categoria": "Riesgo",
+    "clave": "radioterapia",
+    "sinonimos": [
+      "cardiopatia por radiacion",
+      "radioterapia previa",
+      "rdt"
+    ]
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "ticagrelor",
+    "sinonimos": [
+      "brilinta"
+    ],
+    "subcategoria": "Antiplaquetarios", "sub2": "Inhibidores P2Y12"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "prasugrel",
+    "sinonimos": [
+      "prasu",
+      "procardia",
+      "effient"
+    ],
+    "subcategoria": "Antiplaquetarios", "sub2": "Inhibidores P2Y12"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "clopidogrel",
+    "sinonimos": [
+      "clopi",
+      "troken"
+    ],
+    "subcategoria": "Antiplaquetarios", "sub2": "Inhibidores P2Y12"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "heparina",
+    "sinonimos": [
+      "heparina no fraccionada",
+      "hnf",
+      "heparina sodica"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "Heparinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "enoxaparina",
+    "sinonimos": [
+      "enoxa",
+      "clexane"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "Heparinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "fondaparinux",
+    "sinonimos": [
+      "arixtra"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "Heparinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "dabigatran",
+    "sinonimos": [
+      "pradaxa"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "DOAC"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "apixaban",
+    "sinonimos": [
+      "ixipen",
+      "apixa",
+      "eliquis"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "DOAC"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "ivabradina",
+    "sinonimos": [
+      "procoralan"
+    ],
+    "subcategoria": "Antianginosos", "sub2": "Otros"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "nitratos",
+    "sinonimos": [
+      "nitroglicerina",
+      "ntg",
+      "nitroderm",
+      "nitro",
+      "isosorbide mononitrato",
+      "isosorbide dinitrato",
+      "mononitrato de isosorbida",
+      "dinitrato de isosorbida",
+      "isordil",
+      "medocor",
+      "nitroglicerina sublingual",
+      "nitroglicerina spray",
+      "nitroglicerina intravenosa"
+    ],
+    "subcategoria": "Antianginosos", "sub2": "Nitratos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "trimetazidina",
+    "sinonimos": [
+      "vastarel"
+    ],
+    "subcategoria": "Antianginosos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "colchicina",
+    "sinonimos": [
+      "colchicina"
+    ],
+    "subcategoria": "Otros"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "metformina",
+    "sinonimos": [
+      "metiformina",
+      "glucophage",
+      "dbi",
+      "dbi ap"
+    ],
+    "subcategoria": "Hipoglucemiantes", "sub2": "Biguanidas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "losartan",
+    "sinonimos": [
+      "losacor",
+      "loplac",
+      "prisonil",
+      "presimax",
+      "cozaar",
+      "paxon",
+      "tacardia",
+      "fensartan",
+      "presimax",
+      "diapresan"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "losartan/hidroclorotiazida",
+    "sinonimos": [
+      "losartan/hctz",
+      "losartan/hidro",
+      "losartan/hidroclo",
+      "losartan 100/12.5",
+      "losartan 50/25",
+      "losartan 100/HCTZ 12.5",
+      "losartan 50/12.5",
+      "losartan 50-hctz",
+      "antipresol d",
+      "cartan d",
+      "cozaarex d",
+      "enromic d",
+      "fensartan d",
+      "klosartan-d",
+      "loctenk d",
+      "loplac d",
+      "losacor d",
+      "niten d",
+      "paxon d",
+      "presimax d",
+      "presinor d",
+      "prisonil d",
+      "tacardia d",
+      "tacicul d",
+      "temisartan diur",
+      "vasexten d"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "losartan/amlodipina",
+    "sinonimos": [
+      "losartan/amlo",
+      "losartan/amlodipina",
+      "losartan 50/5",
+      "losartan 100/5",
+      "losartan 100/amlo 5",
+      "losartan 50/amlo",
+      "losartan 50/amlo 5",
+      "arteriosan",
+      "cartan ma",
+      "fensartan unima",
+      "ildusartan",
+      "losacor a",
+      "niten ma",
+      "pelmec at",
+      "pelmec ma",
+      "presimax a",
+      "terloc ma"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "atorvastatina",
+    "sinonimos": [
+      "atorva",
+      "atv",
+      "ampliar",
+      "ateroclar",
+      "atorma",
+      "atorvastan",
+      "atorvastatin richet",
+      "atorvastatina fabra",
+      "faboxim",
+      "finlipol",
+      "lipare",
+      "lipend",
+      "lipibec",
+      "lipifen",
+      "lipitor",
+      "lipocambi",
+      "lipodren",
+      "lipokemia",
+      "liponorm",
+      "lipostop",
+      "lipovastatin klonal",
+      "normalip",
+      "normolipol",
+      "ronator",
+      "torivas",
+      "vanator",
+      "vastina",
+      "zarator"
+    ],
+    "subcategoria": "Estatinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "atoravastatina/ezetimibe",
+    "sinonimos": [
+      "atorva/eze",
+      "atv/ezetimibe",
+      "atv 10/eze",
+      "atorvastatina + ezetimibe",
+      "atorva/ezetimibe",
+      "atorva 10/eze",
+      "ampliar duo",
+      "ampliar plus",
+      "ateroclar combi",
+      "ateroclar duo",
+      "colmibe",
+      "liparex plus",
+      "lipibec plus",
+      "lipocambi plus",
+      "lipokemia plus",
+      "liponorm plus",
+      "plan duo",
+      "torimibe",
+      "zarator plus"
+    ],
+    "subcategoria": "Estatinas", "sub2": "Estatinas combinadas"
+  },
+    {
+    "categoria": "Medicacion",
+    "clave": "ezetimibe",
+    "sinonimos": [
+      "ezetimib"
+    ],
+    "subcategoria": "Estatinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "rosuvastatina",
+    "sinonimos": [
+      "rosu",
+      "rosuva",
+      "rosuvastina",
+      "rovastina",
+      "aprentice",
+      "artomey",
+      "astende",
+      "ateronova",
+      "bilip",
+      "colestra",
+      "crestor",
+      "hipolipol",
+      "lipe",
+      "lipoglutaren",
+      "mesoterol",
+      "nodis",
+      "nonlipid",
+      "parasul",
+      "rabloc",
+      "reove",
+      "rostan",
+      "rosu",
+      "rosuber",
+      "rosucol",
+      "rosufec",
+      "rosufen",
+      "rosulip",
+      "rosustatin",
+      "rosuvast",
+      "rosuvastatina richet",
+      "rovartal",
+      "rovastane",
+      "roxolan",
+      "sinlip",
+      "tialipol",
+      "turbulina"
+    ],
+    "subcategoria": "Estatinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "rosuvastatina/ezetimibe",
+    "sinonimos": [
+      "artomey duo",
+      "rosu/eze",
+      "rosu/ezetimibe",
+      "rosu 20/eze 10",
+      "rosu+eze",
+      "rosuvastatina + ezetimibe",
+      "artomey plus",
+      "combicol",
+      "hipolipol ez",
+      "lipex plus",
+      "lipoglutaren duo",
+      "reovex ez",
+      "rosuber plus",
+      "rosufen duo",
+      "rovartal ez",
+      "roxolan plus",
+      "sinlip ez"
+    ],
+    "subcategoria": "Estatinas", "sub2": "Estatinas combinadas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "simvastatina",
+    "sinonimos": [
+      "zocor"
+    ],
+    "subcategoria": "Estatinas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "ac fenofibrico",
+    "sinonimos": [
+      "fenofibrato"
+    ],
+    "subcategoria": "Fibratos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "ramipril",
+    "sinonimos": [
+      "triatec"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "IECA"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "enalapril",
+    "sinonimos": [
+      "enala",
+      "ieca",
+      "arteriopril",
+      "ecaprilat",
+      "enalapril richet",
+      "enaldun",
+      "enatral",
+      "fabotensil",
+      "gadopril",
+      "glioten",
+      "kinfil",
+      "lotrial",
+      "maxen",
+      "nalapril",
+      "presi regul",
+      "priltenk",
+      "renitec",
+      "sulocten",
+      "tencas",
+      "vapresan"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "IECA"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "bisoprolol",
+    "sinonimos": [
+      "biso",
+      "concor",
+      "corbis",
+      "bicardil"
+    ],
+    "subcategoria": "Beta-bloqueantes"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "carvedilol",
+    "sinonimos": [
+      "antibloc",
+      "carve",
+      "bidecar",
+      "bidecar cr",
+      "cardionorm",
+      "cartiato",
+      "carvedil",
+      "carvedil retard",
+      "carvedilol richet",
+      "carvicord",
+      "carvipaw",
+      "cloraten",
+      "corafen",
+      "corubin",
+      "dilatrend",
+      "dilatrend ap",
+      "duobloc",
+      "entarsol",
+      "filten",
+      "filten lp",
+      "hipoten klonal",
+      "isobloc",
+      "isobloc cr",
+      "kollosteril",
+      "rodipal",
+      "vedilep",
+      "veraten",
+      "veraten ud"
+    ],
+    "subcategoria": "Beta-bloqueantes"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "furosemida",
+    "sinonimos": [
+      "furo",
+      "lasix",
+      "furotral",
+      "errolon"
+    ],
+    "subcategoria": "Diuréticos", "sub2": "Diuréticos de Asa"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "espironolactona",
+    "sinonimos": [
+      "espiro",
+      "espirono",
+      "esporinolactona",
+      "aldactone",
+      "lanx",
+      "kenob"
+    ],
+    "subcategoria": "Diuréticos", "sub2": "Anti-Aldosteronicos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "eplerenona",
+    "sinonimos": [
+      "oldren"
+    ],
+    "subcategoria": "Diuréticos", "sub2": "Anti-Aldosteronicos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "aspirina",
+    "sinonimos": [
+      "aas",
+      "ac acetilsalicilico",
+      "asa"
+    ],
+    "subcategoria": "Antiplaquetarios"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "warfarina",
+    "sinonimos": [
+      "coumadin"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "AVK"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "rivaroxaban",
+    "sinonimos": [
+      "rivaroxa",
+      "xaroban",
+      "xarelto",
+      "abaxon",
+      "antitrom",
+      "remexal",
+      "rixatyl"
+    ],
+    "subcategoria": "Anticoagulantes", "sub2": "DOAC"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "amiodarona",
+    "sinonimos": [
+      "atlansil",
+      "amd"
+    ],
+    "subcategoria": "Antiarrítmicos", "sub2": "Clase III"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "digoxina",
+    "sinonimos": [
+      "lanoxin"
+    ],
+    "subcategoria": "Antiarrítmicos", "sub2": "Clase IV"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "isosorbide mononitrato",
+    "sinonimos": [
+      "nsl",
+      "isordil",
+      "medocor"
+    ],
+    "subcategoria": "Antianginosos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "amlodipina",
+    "sinonimos": [
+      "amlo",
+      "pelmec",
+      "ilduc",
+      "amloc"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "Calcioantagonistas"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "hidroclorotiazida",
+    "sinonimos": [
+      "hctz",
+      "diurex",
+      "hidrocloro",
+      "hidroclorotizida"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "Diuréticos Tiazídicos"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "insulina",
+    "sinonimos": [
+      "glargina",
+      "lantus",
+      "nph"
+    ],
+    "subcategoria": "Insulinas", "sub2": "Insulinas de acción prolongada"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "semaglutide",
+    "sinonimos": [
+      "ozempic"
+    ],
+    "subcategoria": "Hipoglucemiantes", "sub2": "aGLP-1"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "empaglifozina",
+    "sinonimos": [
+      "empa",
+      "edagan",
+      "jardiance",
+      "emadian",
+      "emgliber",
+      "empax",
+      "enclyna",
+      "saglox"
+    ],
+    "subcategoria": "Hipoglucemiantes", "sub2": "iSGLT2"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "dapaglifozina",
+    "sinonimos": [
+      "dapa",
+      "dapax",
+      "acus",
+      "nedal",
+      "forxiga",
+      "dactilus",
+      "dapaber",
+      "dauran",
+      "fanter",
+      "jarolese"
+    ],
+      "subcategoria": "Hipoglucemiantes", "sub2": "iSGLT2"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "allopurinol",
+    "sinonimos": [
+      "allopu",
+      "alopurinol"
+    ],
+    "subcategoria": "Otros"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "metoprolol",
+    "sinonimos": [
+      "seloken"
+    ],
+    "subcategoria": "Beta-bloqueantes"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "atenolol",
+    "sinonimos": [
+      "ateno"
+    ],
+    "subcategoria": "Beta-bloqueantes"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "valsartan",
+    "sinonimos": [
+      "sarval",
+      "diovan",
+      "vst",
+      "alpertan",
+      "corosan",
+      "diapresan",
+      "dilcoran",
+      "hiperval",
+      "paliax",
+      "racorval",
+      "simultan"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "valsartan+amlodipina",
+    "sinonimos": [
+      "valsartan/amlo",
+      "valsartan/amlodipina",
+      "valsartan 160/5",
+      "valsartan 320/5",
+      "valsartan 80/5",
+      "valsartan 160/amlo 5",
+      "valsartan 160/amlo 10",
+      "valsratan 320/amlo 5",
+      "valsartan 320/amlod 5",
+      "diapresan a",
+      "dilcoran plus",
+      "disarval",
+      "exforge",
+      "hiprex ma",
+      "nicorvas a",
+      "noster",
+      "racorval a",
+      "simultan a"
+    ],
+    "subcategoria": "Antihipertensivos","sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "valsartan+hctz+amlodipina",
+    "sinonimos": [
+      "valsartan/hctz/amlo",
+      "valsartan/hctz/amlodipina",
+      "valsartan 160/10/12.5",
+      "valsartan 160/5/12.5",
+      "valsartan 320/25/10",
+      "diapresan triple",
+      "dilcoran plus d",
+      "disarval d",
+      "exforge d",
+      "noster d",
+      "racorval",
+      "simultan triple"
+    ],
+    "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "valsartan+hidroclorotiazida",
+    "sinonimos": [
+      "valsratan/hidro",
+      "valsartan/hidroclorotiazida",
+      "valsartan/hidro",
+      "valsartan/hidrocloro",
+      "valsartan/hctz",
+      "valsartan 80/12.5",
+      "valsartan 160/12.5",
+      "valsartan 320/12.5",
+      "valsartan 320/25",
+      "alpertan d",
+      "corosan d",
+      "diapresan d",
+      "dilcoran d",
+      "diovan d",
+      "nicorvas diur",
+      "paliax d",
+      "racorval d",
+      "sarval d",
+      "simultan d",
+      "valsarfec d"
+    ],
+ "subcategoria": "Antihipertensivos", "sub2": "ARA II"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "sacubitrilo/valsartan",
+    "sinonimos": [
+      "arnis",
+      "sacu",
+      "sacubitrilo",
+      "dupertan",
+      "neparvis",
+      "entresto"
+    ],
+    "subcategoria": "ARNI"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "diosmina-hesperidina",
+    "sinonimos": [
+      "daflon"
+    ],
+    "subcategoria": "Otros"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "levotiroxina",
+    "sinonimos": [
+      "t4",
+      "levo"
+    ],
+    "subcategoria": "Otros"
+  },
+  {
+    "categoria": "Medicacion",
+    "clave": "tamsulosina",
+    "sinonimos": [
+      "tamsu",
+      "aclosan",
+      "denverprost",
+      "reduprost",
+      "sulos",
+      "uroprost"
+    ],
+    "subcategoria": "Otros"
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "hemoglobina glicosilada",
+    "sinonimos": [
+      "glicozilada",
+      "glico",
+      "glicocilda",
+      "glicosilada",
+      "hb1ac",
+      "hba1c",
+      "hemoglobina a1c"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "colesterol LDL",
+    "sinonimos": [
+      "ldl",
+      "colesterol malo"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "colesterol HDL",
+    "sinonimos": [
+      "hdl",
+      "colesterol bueno"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "colesterol total",
+    "sinonimos": [
+      "col total",
+      "col",
+      "ct",
+      "ct total",
+      "cole"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "trigliceridos",
+    "sinonimos": [
+      "tg"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "plaquetas",
+    "sinonimos": [
+      "plaq",
+      "plq"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "leucocitos",
+    "sinonimos": [
+      "lecuos",
+      "gl blanco"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "lipoproteina A",
+    "sinonimos": [
+      "lpa",
+      "lp(a)",
+      "lip a",
+      "lipo a",
+      "lipoA"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "creatinina",
+    "sinonimos": [
+      "creat",
+      "creati",
+      "cr",
+      "creatininemia",
+      "crea"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "troponina",
+    "sinonimos": [
+      "tnt",
+      "tntc",
+      "troponina i",
+    "troponina t",
+      "tus",
+      "tn",
+      "ttus",
+      "tropo",
+      "tropos",
+      "troponinas"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "pro-BNP",
+    "sinonimos": [
+      "nt-probnp",
+      "probnp",
+      "bnp",
+      "pbnp"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "RIN",
+    "sinonimos": [
+      "indice internacional normalizado",
+      "inr"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "glucemia",
+    "sinonimos": [
+      "gluc",
+      "glucosa",
+      "glu",
+      "glicemia",
+      "gluc basal",
+      "glucemia basal",
+      "glucemia en ayunas"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "acido urico",
+    "sinonimos": [
+      "uricemia"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "proteina C reactiva",
+    "sinonimos": [
+      "pcr"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "eritrosedimentacion",
+    "sinonimos": [
+      "esd",
+      "eritro"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "hematrocrito",
+    "sinonimos": [
+      "hto"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "CPK-MB",
+    "sinonimos": [
+      "creatina quinasa mb"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "microalbuminuria",
+    "sinonimos": [
+      "albumina en orina"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "proteinuria",
+    "sinonimos": [
+      "RAC"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "filtrado glomerular",
+    "sinonimos": [
+      "cl de creatinina",
+      "clearence",
+      "Cl calculado",
+      "cl calculado",
+      "Cl calc",
+      "fg",
+      "tfg",
+      "eGFR"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "RAC",
+    "sinonimos": [
+      "relacion albumina creatinina"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "potasio serico",
+    "sinonimos": [
+      "k",
+      "potasio",
+      "potasemia"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "sodio serico",
+    "sinonimos": [
+      "na+"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "dimero D",
+    "sinonimos": [
+      "d-dimero"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "tiempo de protrombina",
+    "sinonimos": [
+      "tp"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "tiempo de tromboplastina",
+    "sinonimos": [
+      "ttpa"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "gasometria arterial",
+    "sinonimos": [
+      "ga"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "lactato",
+    "sinonimos": [
+      "acido lactico"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "procalcitonina",
+    "sinonimos": [
+      "pct"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "interleucina-6",
+    "sinonimos": [
+      "il-6"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "ferritina",
+    "sinonimos": [
+      "depositos de hierro"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "transferrina",
+    "sinonimos": [
+      "capacidad de fijacion"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "fibrinogeno",
+    "sinonimos": [
+      "factor i"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "fevi preservada",
+    "sinonimos": [
+      "fey preservada",
+      "fevi conservada"
+    ]
+  },
+  {
+    "categoria": "Laboratorio",
+    "clave": "FEVI",
+    "sinonimos": [
+      "fey",
+      "funcion del vi",
+      "fraccion de eyeccion del ventrículo izquierdo",
+      "eyeccion del ventrículo izquierdo",
+      "FEY",
+      "fevi"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "disnea",
+    "sinonimos": [
+      "falta de aire",
+      "dificultad para respirar",
+      "ahogo"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "dolor torácico",
+    "sinonimos": [
+      "opresión en el pecho",
+      "dolor en el pecho",
+      "angor"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "palpitaciones",
+    "sinonimos": [
+      "latidos rápidos",
+      "sensación de latido",
+      "taquicardia subjetiva"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "síncope",
+    "sinonimos": [
+      "desmayo",
+      "pérdida de conciencia",
+      "episodio sincopal"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "mareos",
+    "sinonimos": [
+      "vértigo",
+      "sensación de giro",
+      "aturdimiento"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "edema",
+    "sinonimos": [
+      "hinchazón",
+      "retención de líquidos",
+      "pies hinchados"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "astenia",
+    "sinonimos": [
+      "fatiga",
+      "cansancio",
+      "agotamiento"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "cefalea",
+    "sinonimos": [
+      "dolor de cabeza",
+      "migraña"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "náuseas",
+    "sinonimos": [
+      "ganas de vomitar",
+      "sensación nauseosa"
+    ]
+  },
+  {
+    "categoria": "Sintoma",
+    "clave": "vómitos",
+    "sinonimos": [
+      "emesis",
+      "devolución de alimentos"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "ecocardiograma",
+    "sinonimos": [
+      "eco cardíaco",
+      "ecocardio",
+      "ecocardiografía"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "electrocardiograma",
+    "sinonimos": [
+      "ecg",
+      "electro",
+      "electrocardiografía"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "angiografía coronaria",
+    "sinonimos": [
+      "cateterismo",
+      "cinecoronariografía",
+      "estudio coronario invasivo"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "resonancia cardíaca",
+    "sinonimos": [
+      "rm cardíaca",
+      "rmn cardíaca",
+      "resonancia del corazón"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "tomografía de tórax",
+    "sinonimos": [
+      "tc torácica",
+      "scan de tórax",
+      "angiotomografía"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "prueba de esfuerzo",
+    "sinonimos": [
+      "ergometría",
+      "test de esfuerzo",
+      "prueba ergométrica"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "holter",
+    "sinonimos": [
+      "monitoreo 24hs",
+      "electro continuo"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "monitor de presión arterial",
+    "sinonimos": [
+      "mapa",
+      "presurometría ambulatoria",
+      "registro de presión"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "gammagrafía miocárdica",
+    "sinonimos": [
+      "spect",
+      "perfusión miocárdica"
+    ]
+  },
+  {
+    "categoria": "Estudio",
+    "clave": "estudio de sueño",
+    "sinonimos": [
+      "polisomnografía",
+      "psg",
+      "estudio respiratorio nocturno"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "crepitantes",
+    "sinonimos": [
+      "rales",
+      "ruidos crepitantes",
+      "estertores"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "soplo cardíaco",
+    "sinonimos": [
+      "ruido cardíaco anormal",
+      "soplo"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "ingurgitación yugular",
+    "sinonimos": [
+      "yugulares ingurgitadas",
+      "distensión yugular"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "hepatomegalia",
+    "sinonimos": [
+      "hígado agrandado",
+      "aumento del tamaño hepático"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "ascitis",
+    "sinonimos": [
+      "líquido abdominal",
+      "distensión abdominal por líquido"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "pulso paradójico",
+    "sinonimos": [
+      "descenso de presión sistólica en inspiración"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "hipotensión arterial",
+    "sinonimos": [
+      "presión baja",
+      "tensión baja"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "taquicardia",
+    "sinonimos": [
+      "frecuencia cardíaca elevada",
+      "pulso rápido"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "bradicardia",
+    "sinonimos": [
+      "frecuencia cardíaca lenta",
+      "pulso lento"
+    ]
+  },
+  {
+    "categoria": "Signo",
+    "clave": "fiebre",
+    "sinonimos": [
+      "temperatura elevada",
+      "estado febril"
+    ]
+  }
+]

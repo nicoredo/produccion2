@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "MedReg — Sidebar Asistente de Estudios",
+  "version": "0.9.1",
+  "action": { "default_title": "MedReg" },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage", "scripting", "activeTab", "tabs", "sidePanel", "tabCapture"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "medreg_local_demo.html",
+    "allowed_contexts": ["all"], 
+    "allow_untrusted_content": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file://*/*"],
+      "js": ["web-content.js", "highlight-content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["terminologia_medica.json", "reglas_cruce.json", "icon16.png", "icon48.png", "icon128.png", "medreg_local_demo.html", "medreg_local_demo.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

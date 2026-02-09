@@ -1,0 +1,112 @@
+[
+  { "if": { "cat": "medicacion", "sub2": "IECA" },                "then": [ { "cat": "factoresRiesgo", "clave": "hipertension arterial" } ] },
+  { "if": { "cat": "medicacion", "sub2": "ARA II" },              "then": [ { "cat": "factoresRiesgo", "clave": "hipertension arterial" } ] },
+  { "if": { "cat": "medicacion", "sub2": "Calcioantagonistas" },  "then": [ { "cat": "factoresRiesgo", "clave": "hipertension arterial" } ] },
+  { "if": { "cat": "medicacion", "sub2": "Diuréticos Tiazídicos" }, "then": [ { "cat": "factoresRiesgo", "clave": "hipertension arterial" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Diuréticos", "sub2": "Diuréticos de Asa" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Diuréticos", "sub2": "Anti-Aldosteronicos" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "ARNI" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Estatinas" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Fibratos" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Ezetimibe/Combinados" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "Estatinas combinadas" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "iSGLT2" },
+    "then": [
+      { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" },
+      { "cat": "antecedentes",   "clave": "insuficiencia cardiaca" }
+    ] },
+
+  { "if": { "cat": "medicacion", "sub2": "aGLP-1" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "Biguanidas" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "Insulinas de acción prolongada" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "DOAC" },
+    "then": [ { "cat": "antecedentes", "clave": "fibrilacion auricular" } ] },
+
+  { "if": { "cat": "medicacion", "sub2": "AVK" },
+    "then": [ { "cat": "antecedentes", "clave": "fibrilacion auricular" } ] },
+
+  { "if": { "cat": "medicacion", "subcategoria": "Antianginosos", "sub2": "Nitratos" },
+    "then": [ { "cat": "antecedentes", "clave": "cardiopatia isquemica necrotica" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Enfermedad coronaria", "sub2": "SCA" },
+    "then": [ { "cat": "antecedentes", "clave": "enfermedad coronaria" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Enfermedad coronaria", "sub2": "revascularizacion" },
+    "then": [ { "cat": "antecedentes", "clave": "enfermedad coronaria" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Enfermedad coronaria", "sub2": "Enfermedad coronaria cronica" },
+    "then": [ { "cat": "antecedentes", "clave": "enfermedad coronaria" } ] },
+
+  { "if": { "cat": "antecedentes", "clave": "enfermedad arterial periferica" },
+    "then": [ { "cat": "antecedentes", "clave": "arteriopatia periferica" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "arteriopatia periferica", "sub2": "revascularizacion" },
+    "then": [ { "cat": "antecedentes", "clave": "arteriopatia periferica" } ] },
+
+  { "if": { "cat": "antecedentes", "clave": "ateromatosis carotidea" },
+    "then": [ { "cat": "antecedentes", "clave": "arteriopatia periferica" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Insuficiencia cardiaca", "sub2": "ic aguda" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Insuficiencia cardiaca", "sub2": "ic cronica" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Enfermedad coronaria", "sub2": "SCA" },
+    "then": [ { "cat": "antecedentes", "clave": "evento cardiovascular" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Neurovascular", "sub2": "ACV/AIT" },
+    "then": [ { "cat": "antecedentes", "clave": "evento cardiovascular" } ] },
+
+  { "if": { "cat": "antecedentes", "subcategoria": "Insuficiencia cardiaca", "sub2": "ic aguda" },
+    "then": [ { "cat": "antecedentes", "clave": "evento cardiovascular" } ] },
+
+  { "if": { "cat": "laboratorio", "clave": "colesterol total", "op": ">", "value": 200, "unit": "mg/dL" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "laboratorio", "clave": "colesterol ldl", "op": ">=", "value": 100, "unit": "mg/dL" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "dislipidemia" } ] },
+
+  { "if": { "cat": "laboratorio", "clave": "hemoglobina glicosilada", "op": ">=", "value": 6.5, "unit": "%" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" } ] },
+
+  { "if": { "cat": "laboratorio", "clave": "glucemia", "op": ">=", "value": 126, "unit": "mg/dL" },
+    "then": [ { "cat": "factoresRiesgo", "clave": "diabetes mellitus tipo 2" } ] },
+
+  { "if": { "cat": "laboratorio", "clave": "fraccion de eyeccion", "op": "<", "value": 40, "unit": "%" },
+    "then": [
+      { "cat": "laboratorio", "clave": "fevi reducida" },
+      { "cat": "antecedentes", "clave": "insuficiencia cardiaca" }
+    ] },
+    
+
+  { "if": { "cat": "laboratorio", "clave": "fevi severa" },
+    "then": [
+      { "cat": "laboratorio", "clave": "fevi reducida" },
+      { "cat": "antecedentes", "clave": "insuficiencia cardiaca" }
+    ] },
+
+  { "if": { "cat": "laboratorio", "clave": "fevi reducida" },
+    "then": [ { "cat": "antecedentes", "clave": "insuficiencia cardiaca" } ] }
+]

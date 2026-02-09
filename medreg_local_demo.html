@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+ <meta charset="utf-8">
+  <title>MedReg — Sidebar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Permissions-Policy" content="microphone=(self)">
+  <style>
+    /* ====== SKIN OSCURO (sin tocar IDs) ====== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    :root{
+      --bg:#0b1220; --bg2:#0e1526; --panel:#121a2b; --card:#0f172a; --stroke:#1f2a44;
+      --text:#e6eefc; --muted:#ffffff; --brand:#4aa3ff; --brand-2:#2b7de9;
+      --ok:#34d399; --warn:#2436fb; --err:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text); min-width:420px; padding:14px;
+      border-left:1px solid var(--stroke);
+    }
+    h1,h2,h3{margin:0 0 8px 0}
+    a{color:var(--brand)}
+    .muted{color:var(--muted)}
+    .row{display:flex; gap:8px; align-items:center}
+    .col{display:flex; flex-direction:column; gap:8px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+    .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+    .p-2{padding:12px} .mb-2{margin-bottom:12px} .mb-1{margin-bottom:6px}
+    .sep{border:none; border-top:1px solid var(--stroke); margin:8px 0}
+
+  /* Small inline group helper: align items horizontally and allow a centered element */
+  .inline-group{display:flex;gap:8px;align-items:center}
+  .inline-group .session-count{flex:1;gap:20px;text-align:center}
+
+    /* Cards / contenedores */
+    .card{
+      background:var(--card); border:1px solid var(--stroke);
+      border-radius:14px; padding:12px; box-shadow:0 6px 20px rgba(0,0,0,.18);
+    }
+
+    /* Botones */
+    button{
+      appearance:none; border:1px solid var(--stroke); background:#0b1427;
+      color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer;
+      transition:.15s background,.15s border-color,.15s color; width:100%;
+    }
+    button:hover{border-color:#33518d}
+    .btn.primary{background:linear-gradient(180deg,var(--brand),var(--brand-2)); border-color:#2b7de9}
+    .btn.primary:hover{filter:saturate(1.1)}
+    .btn.subtle{background:#0c152a; border-color:#203152; color:#d2ddf4}
+    .btn.peligro{background:#2a0c11; border-color:#5a1f28; color:#ffb4be}
+    .btn.success{background:#0e2a1e; border-color:#1e6248; color:#bff3df}
+
+    /* Controles */
+    select, input, textarea, datalist{
+      background:#0b1427; border:1px solid #1c2a4d; color:var(--text); border-radius:10px;
+      padding:8px 10px; outline:none; width:100%;
+    }
+    textarea{resize:vertical}
+    label{display:block; font-size:12px; color:var(--muted); margin-bottom:4px}
+
+    /* Tabs (superiores) */
+   .tabs{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 0.85fr; /* Asistente, Agente Deep, Investigador, Notas (más angosta) */
+  gap:8px;
+  margin:8px 0 12px;
+  width:100%;
+}
+  .tabs button{
+  padding:8px;
+  border-radius:12px;
+  background:#0e1a33;
+  border:1px solid #22375f;
+  color:#cfe1ff;
+  font-weight:700;
+  position: relative;           /* 👈 agregar esto */
+}
+.tabs button.active,
+.tabs button:hover{
+  background:#142446;
+  border-color:#2b4f8a;
+}
+
+/* Badge para Notas (contador tipo mail) */
+.notas-badge{
+  position:absolute;
+  top:4px;
+  right:8px;
+  min-width:16px;
+  padding:0 5px;
+  border-radius:999px;
+  background:#ef4444;
+  color:#ffffff;
+  font-size:10px;
+  line-height:16px;
+  text-align:center;
+  box-shadow:0 0 0 1px #0b1220; /* borde para que destaque sobre el tab */
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+    /* Chat */
+        /* Chat */
+    #ai-chat-messages{
+      display:flex; flex-direction:column; gap:8px; min-height:420px; max-height:4800px;
+      padding:8px; border:1px dashed #2a3f6b; border-radius:10px; overflow:auto; background:#0b1427;
+    }
+    #ai-chat-input-area{display:flex; gap:8px; align-items:flex-start}
+    #ai_question{flex:1}
+
+    /* Switch modo de respuesta */
+     /* Fila superior del chat (API key + modelo + switch) */
+    #ai-top-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    /* Achicar ancho del select de modelos */
+    #openrouterModel{
+      flex:0 0 150px;        /* probá 140–160px según cómo lo veas */
+      max-width:150px;
+    }
+
+    /* Switch modo de respuesta inline, pegado a la derecha */
+    #ai-mode-row{
+      margin-left:auto;      /* empuja el switch hacia la derecha */
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+    }
+
+    .ai-mode-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      cursor:pointer;
+    }
+
+    .ai-mode-toggle input{
+      margin:0;
+    }
+
+    #aiModeLabel{
+      font-weight:600;
+    }
+
+
+    /* Extracciones compactas */
+    #extractionList .ex-block{margin-top:8px}
+    .ex-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+    .ex-title{font-weight:800; color:#a4bee8}
+    #extractionsList{display:flex; flex-direction:column; gap:6px; max-height:180px; overflow:auto}
+    #extractionsList .ex-item{
+      display:flex; align-items:center; justify-content:space-between; gap:8px;
+      background:#0c152a; border:1px dashed #28406f; padding:8px 10px; border-radius:10px;
+    }
+    #extractionsList .ex-name{font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    #extractionsList .ex-sub{color:#9fb1d6; font-size:12px}
+    #extractionsList .ex-actions{display:flex; gap:6px}
+    #extractionsList .ex-actions .btn-del{background:#2a0c11; border-color:#5a1f28; color:#ffb4be; width:auto; padding:4px 8px; border-radius:8px}
+
+    /* Criterios / Estudio local */
+    .categoria{background:#0e172b; border:1px solid #1f2b49; border-radius:12px; padding:10px; margin:10px 0}
+    .categoria label{display:flex; justify-content:space-between; align-items:center; font-weight:800; color:#a4bee8; margin-bottom:6px}
+    .criterio{
+      display:flex; align-items:center; gap:8px; padding:8px 10px; margin:6px 0;
+      border-radius:10px; background:#0b1427; border:1px solid #1a284a; cursor:pointer;
+    }
+    .criterio:hover{background:#0f1b36}
+    .criterio.cumple{border-color:rgba(52,211,153,.4)}
+    .criterio.nocumple{border-color:rgba(239,68,68,.5)}
+    .criterio.parcial{border-color:rgba(251,191,36,.5)}
+    .criterio .chk{width:20px; height:20px}
+    .criterio .valorOperador{width:120px}
+
+    /* Notas / Agenda listas */
+    #notas-list,#events-list{max-height:220px; overflow:auto; display:flex; flex-direction:column; gap:8px}
+    .note-item,.event-item{background:#0b1427; border:1px solid #1c2949; padding:8px 10px; border-radius:10px}
+
+    /* Badges y resultados */
+    .badge{display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #223b6a; background:#0d1a32; font-size:12px}
+    .result-ok{color:#bff3df; border-color:#1e6248; background:#0e2a1e}
+    .result-warn{color:#ffe8b0; border-color:#8a6a1e; background:#2b210e}
+    .result-err{color:#ffb4be; border-color:#5a1f28; background:#2a0c11}
+
+
+
+
+    /* Input del chat a ancho completo */
+#ai-chat-input-area { display:block; }
+#ai_question { width:100%; }
+
+/* Fila de 3 botones debajo del input */
+#ai-chat-actions{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+}
+
+/* (opcional) asegurar protagonismo del chat */
+#ai-chat-messages{ flex:1 1 auto; }
+
+
+
+/* Top: chat + contexto, comprimidos pero legibles */
+#panelTop { display: flex; flex-direction: column; gap: 10px; }
+
+/* El área de mensajes del chat, protagonista */
+#ai-chat-messages{
+  flex: 1 1 auto;
+  min-height: clamp(240px, 40vh, 520px);
+  overflow: auto;
+}
+
+/* Input = ancho completo (ya lo tenés) y fila de botones compacta */
+#ai-chat-input-area textarea { width: 100%; }
+#ai-chat-actions { display: flex; gap: 8px; }
+
+/* Contexto para IA con scroll interno */
+#extractionsList{
+  max-height: clamp(120px, 22vh, 320px);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Bottom: herramientas con su propio scroll, ocupa el resto */
+#panelBottom{
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-bottom: 8px;
+  margin-top: 6px;
+}
+
+
+
+
+/* === FIX ALTURAS FIJAS (no empujar) === */
+
+/* 1) Ventana de chat: alto fijo + scroll interno */
+#ai-chat-messages{
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* 2) Contexto para IA: alto fijo + scroll interno */
+#extractionsList{
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* 3) Input en una línea (ya lo tenías) y fila de botones debajo */
+#ai-chat-input-area { display:block; }
+#ai_question { width:100%; }
+#ai-chat-actions{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+
+/* 4) (opcional) que el resto no cambie el alto del chat+contexto */
+#panelTop { display:flex; flex-direction:column; gap:10px; }
+
+    
+
+/* mismo “carril” visual para chat y extracciones */
+#ai-chat-messages { width: 100%; }
+#extractionsList, #extractionsList * { box-sizing: border-box; }
+#extractionsList { width: 100%; }
+
+/* items compactos en una sola línea */
+.ex-item { display:flex; align-items:center; justify-content:space-between;
+  padding:8px 10px; border:1px dashed #2b3b63; border-radius:10px; margin:6px 0; background:#0f1d3a; }
+.ex-name { font-weight:600; color:#dbeafe; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width: 80%; }
+.ex-actions button { background:#172554; border:1px solid #334155; color:#fca5a5; border-radius:8px; padding:4px 8px; cursor:pointer; }
+.ex-actions button:hover { filter: brightness(1.2); }
+
+
+/* ===== Extracciones: ancho fijo igual al chat, sin scroll horizontal ===== */
+#extractionsList, #extractionList {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-y: auto;
+  overflow-x: hidden;             /* clave: nada de scroll horizontal */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 6px;             /* deja lugar a la barra vertical */
+  box-sizing: border-box;
+}
+
+/* Cada ítem ocupa TODO el ancho del carril */
+.ex-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px dashed #2b3b63;
+  border-radius: 10px;
+  background: #0f1d3a;
+  box-sizing: border-box;         /* evita que padding sume ancho */
+}
+
+/* Texto en una sola línea, nunca empuja el ancho */
+.ex-name {
+  flex: 1 1 auto;
+  min-width: 0;                   /* necesario para que ellipsis funcione en flex */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #dbeafe;
+  font-weight: 600;
+}
+
+/* Columna fija para la X bien alineada */
+.ex-actions { flex: 0 0 auto; }
+
+.ex-actions button {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #172554;
+  color: #fca5a5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ex-actions button:hover { filter: brightness(1.15); }
+
+
+/* ===================== ESTILOS MODALES OVERLAY ===================== */
+.medreg-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                  /* oculto por defecto */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;                 /* por encima del sidebar */
+}
+.medreg-modal.show {
+  display: flex;                  /* visible como overlay centrado */
+}
+.medreg-modal .backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+}
+.medreg-modal .box {
+  position: relative;
+  width: min(720px, 92vw);
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.medreg-modal .header, .medreg-modal .footer {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+}
+.medreg-modal .footer { 
+  border-bottom: none; 
+  border-top: 1px solid #eee; 
+  display: flex; gap: 8px; justify-content: flex-end;
+}
+.medreg-modal .body { 
+  padding: 16px 18px; 
+}
+.medreg-modal .close {
+  all: unset;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* === Overlay de modales + helper oculto === */
+.medreg-modal{
+  position: fixed; inset: 0;
+  display: none;           /* JS cambia a 'flex' al abrir */
+  align-items: center; justify-content: center;
+  background: rgba(3, 12, 28, .65);  /* oscurece el fondo */
+  backdrop-filter: blur(2px);
+  padding: 16px;
+  z-index: 9999;
+}
+.medreg-modal .box{
+  width: 100%; max-width: 640px;
+  max-height: 90vh; overflow: auto;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+/* Utilidad para que el JS pueda ocultar/mostrar */
+.oculto{ display: none !important; }
+
+
+/*/BOTONES
+
+/* === Acciones estudio: layout compacto === */
+.acciones-estudio-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  align-items: stretch;
+   margin-bottom: 40px;
+}
+
+/* botones compactos */
+.acciones-estudio-grid .btn{
+  font-size: 0.85rem;              /* antes: 0.9rem */
+  padding: 4px 8px;                /* antes: 6px 10px */
+  min-height: 32px;                /* antes: 36px */
+  border-radius: 10px;
+  border: 0;                       /* sin reborde */
+}
+
+.acciones-estudio-grid .span-2{
+  grid-column: auto !important;    /* antes: span 2 */
+}
+
+/* botón icono (🗑) */
+.acciones-estudio-grid .btn-icon{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; min-width: 36px; padding: 0;
+}
+
+/* variantes (usá las que ya tenés; esto es por si necesitás) */
+.btn.primary{ background: var(--accent, #2a74ff); color:#fff; border:1px solid transparent; }
+.btn.danger{  background: #8c2a2a; color:#fff; border:1px solid transparent; }
+.btn:hover{ filter: brightness(1.05); }
+
+
+
+.ex-list.dragover { outline: 1px dashed #60a5fa; background: rgba(96,165,250,.06); }
+
+
+
+
+#iaAnalisisOutInv{
+  min-height: 220px;
+  max-height: 420px;
+  overflow: auto;
+  white-space: pre-wrap;
+  border: 1px dashed #2a3f6b;
+  border-radius: 10px;
+  background: #0b1427;
+  padding: 10px;
+}
+
+
+
+/* Mejor contraste del input + placeholder del autocompletado */
+#claveInput{
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--stroke);
+}
+#claveInput::placeholder{
+  color: var(--muted);
+  opacity: .9;
+}
+
+/* Scrollbar del panel de sugerencias (opcional) */
+#suggestPanel::-webkit-scrollbar{ width:10px }
+#suggestPanel::-webkit-scrollbar-thumb{ background:#24314d; border-radius:8px }
+#suggestPanel::-webkit-scrollbar-track{ background:transparent }
+
+
+
+/* Sugerencias / chips en tema oscuro */
+
+/* Sugerencias / chips en tema oscuro */
+#suggestPanel,
+#suggestPanel .suggest-item,
+#suggestPanel button,
+#suggestPanel .pill,
+#suggestPanel .tag,
+#suggestPanel .chip {
+  background:#0B1220 !important;
+  color:#e5edff !important;
+  border:1px solid #263348 !important;
+}
+
+/* Hover: fondo un poco más claro pero texto SIEMPRE claro */
+#suggestPanel .suggest-item:hover,
+#suggestPanel button:hover,
+#suggestPanel .pill:hover,
+#suggestPanel .tag:hover,
+#suggestPanel .chip:hover,
+#suggestPanel .suggest-item:focus {
+  background:#1F2A44 !important;
+  color:#e5edff !important;
+}
+
+
+#suggestPanel .pill.disabled,
+#suggestPanel .tag.disabled,
+#suggestPanel .chip.disabled {
+  background:#0D2239 !important;
+  color:#94a3b8 !important;
+  opacity:.9 !important;
+}
+
+
+
+/* Subcategorías y grupos, que estaban quedando blancas */
+#suggestPanel .pill.subcat,
+#suggestPanel .tag.subcat { background:#163355 !important; }
+
+#suggestPanel .pill.sub2,
+#suggestPanel .tag.sub2 { background:#1B2F49 !important; }
+#suggestPanel .pill.disabled,
+#suggestPanel .tag.disabled,
+#suggestPanel .chip.disabled {
+  background:#0D2239 !important;
+  color:#000000 !important;
+  opacity:.9 !important;
+}
+
+
+
+#iaAnalisisOutInv{
+  min-height: 220px;            /* antes era más chica */
+  max-height: 380px;            /* mantiene scroll interno */
+  overflow: auto;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+.brand { display:flex; align-items:center; justify-content:space-between; position:relative; }
+#logoMedreg{
+  width: 120px;      /* ← ajustá acá el ancho */
+  height: auto;      /* mantiene proporción */
+  max-width: 100%;   /* no se pasa del contenedor */
+  display: block;
+}
+
+.config-gear-btn{
+  margin-left:auto;
+  background:transparent;
+  border:none;
+  padding:4px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.config-gear-btn:hover{
+  background:#111827;
+}
+.config-gear-icon{
+  font-size:16px;
+  line-height:1;
+  color:#9fb1d6;
+  display:inline-block;
+}
+.config-gear-icon-bg{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#configPromptsMenu{
+  position:absolute;
+  top:6px;
+  right:4px;
+  background:#0f172a;
+  border:1px solid #1f2a44;
+  border-radius:10px;
+  padding:6px 0;
+  box-shadow:0 18px 40px rgba(15,23,42,.85);
+  min-width:210px;
+  z-index:9999;
+  display:none;
+}
+#configPromptsMenu button{
+  width:100%;
+  background:transparent;
+  border:none;
+  padding:8px 12px;
+  text-align:left;
+  font-size:12px;
+  color:#e6eefc;
+  cursor:pointer;
+}
+#configPromptsMenu button:hover{
+  background:#111827;
+}
+#configPromptsMenu .menu-label{
+  padding:4px 12px 6px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:#6b778f;
+}
+
+
+
+/* ======= ESTILOS ADICIONALES VARIOS ======= */
+/* === Chat 3/4 pantalla + resizable + tipografía mayor === */
+#ai-chat-messages{
+  /* alto por defecto: 3/4 de la pantalla, con un piso */
+  height: clamp(360px, 50vh, 90vh) !important;
+
+  /* permitir que el usuario lo estire */
+  resize: vertical;
+
+  /* scroll interno y sin límites chicos que lo “aplasten” */
+  min-height: 360px !important;
+  max-height: 90vh !important;
+  overflow: auto !important;
+
+  /* letra un poco más grande y cómoda */
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+/* si querés también subir apenas la letra del textarea de entrada: */
+#ai_question{
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ===== Editor de botones rápidos: tarjetas colapsables ===== */
+
+/* ===== Editor de botones rápidos: tarjetas colapsables ===== */
+
+/* Caja del modal: header y footer fijos, scrollea solo el cuerpo */
+#quickPromptsModal .box{
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+/* Cuerpo scrolleable, sin scroll horizontal */
+#quickPromptsModal .body{
+  flex: 1;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+}
+
+#qpList{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Tarjeta de cada botón */
+.qp-row{
+  width: 100%;
+  box-sizing: border-box;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+/* Header: título del botón + iconos */
+.qp-row-header{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qp-row-header-main{
+  flex: 1;
+}
+
+/* Input del título */
+.qp-row-header-main .qp-label{
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Columna de iconos (editar / borrar) */
+.qp-row-header-actions{
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.qp-row .icon-btn{
+  padding: 4px 6px;
+}
+
+/* Cuerpo con el textarea del prompt */
+.qp-row-body{
+  margin-top: 6px;
+}
+
+/* Estado colapsado: se oculta el cuerpo */
+.qp-row.qp-row-collapsed .qp-row-body{
+  display: none;
+}
+
+/* Icono de editar: flechita que gira */
+.qp-toggle span{
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform .15s ease;
+}
+.qp-row:not(.qp-row-collapsed) .qp-toggle span{
+  transform: rotate(90deg);
+}
+
+/* Textarea cómodo para escribir */
+.qp-text{
+  width: 100%;
+  min-height: 80px;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+
+/* Loading para Análisis IA (Investigador) */
+#invIaLoading{
+  display:none;
+  margin-top:8px;
+  font-size:13px;
+  color:#38bdf8;
+  align-items:center;
+  gap:6px;
+}
+
+#invIaLoading .inv-spinner{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  border:2px solid rgba(148,163,184,0.45);
+  border-top-color:#38bdf8;
+  animation: inv-spin .8s linear infinite;
+}
+
+@keyframes inv-spin{
+  to { transform: rotate(360deg); }
+}
+
+
+
+.preset-btn {
+    flex-grow: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--stroke);
+    border-radius: 6px;
+    background: var(--bg2);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+.preset-btn:hover {
+    background: var(--stroke);
+}
+.preset-btn.active {
+    background: var(--brand); /* Color azul */
+    border-color: var(--brand);
+    color: var(--bg); /* Texto oscuro para contraste */
+    font-weight: 600;
+}
+
+  </style>
+</head>
+<body>
+<div class="brand">
+  <img id="logoMedreg" src="icon128.png" alt="MedReg" />
+  <button id="btnConfigPrompts" class="config-gear-btn" title="Configurar prompts">
+    <span class="config-gear-icon-bg">
+      <span class="config-gear-icon">⚙</span>
+    </span>
+  </button>
+<div id="configPromptsMenu" aria-label="Configuración de prompts">
+  <div class="menu-label">Configuración</div>
+  <button type="button" id="btnEditQuickPrompts">Editar botones…</button>
+  <button type="button" id="btnExportQuickPrompts">Exportar preset</button>
+  <button type="button" id="btnImportQuickPrompts">Importar preset</button>
+  <button type="button" id="btnToggleQuickPrompts">Mostrar / ocultar botonera</button>
+  <button type="button" id="btnResetQuickPrompts">Restablecer valores por defecto</button>
+
+  <!-- input oculto para importar preset desde archivo -->
+  <input
+    type="file"
+    id="quickPromptsFileInput"
+    accept="application/json,.json"
+    style="display:none"
+  />
+</div>
+
+</div>
+
+
+  <!-- NAV superior (mismos IDs que el viejo JS) -->
+  <div class="tabs">
+    <button id="btnChatIA" class="active">Asistente</button>
+      <button id="btnRegistroLocal">Investigador</button>
+    <button id="btnAgenteDeep">Agente Deep</button>
+        <button id="btnNotas">
+    Notas
+    <span id="notasBadge" class="notas-badge" style="display:none"></span>
+  </button>
+</div>
+
+  <!-- === CHAT IA === -->
+  <section id="chatSection" style="display:none">
+<section id="ai-chat-composer" style="display:flex;flex-direction:column;gap:8px">
+  <div class="row mb-1" id="ai-top-row">
+    <button id="btnSetOpenRouterKey" class="btn" style="width:auto">API key</button>
+
+    <select id="openrouterModel" title="Modelo">
+      <option value="x-ai/grok-4-fast">Grok 4</option>
+      <option value="google/gemini-1.5-flash">Gemini 1.5</option>
+      <option value="meta-llama/llama-3.1-70b-instruct">LLama Instruct</option>
+      <option value="mistralai/mistral-large-2411" selected>Mistral</option>
+    </select>
+
+    <!-- Switch breve / desarrollada inline -->
+    <div id="ai-mode-row">
+      <span class="muted">Modo respuesta:</span>
+      <label class="ai-mode-toggle">
+        <span id="aiModeLabel">Detallada</span>
+        <input type="checkbox" id="aiModeToggle" checked />
+      </label>
+    </div>
+  </div>
+
+  <div id="panelTop">
+
+
+    <div id="ai-chat-messages" aria-live="polite"></div>
+  
+
+<div id="ai-chat-input-area" class="mb-1">
+  <textarea id="ai_question" rows="2" placeholder="Escribí tu mensaje…"></textarea>
+</div>
+
+<!-- Fila de botones debajo -->
+<div id="ai-chat-actions" class="mb-1">
+  <button id="btnEnviarIA" class="btn primary">Enviar</button>
+  <button id="btnExtractHC" class="btn">Extraer HC</button>
+  <button id="btnLimpiarIA" class="btn subtle">Limpiar</button>
+</div>
+
+
+    <!-- Extracciones (debajo del chat) -->
+ <section id="extractionList" aria-label="Contexto para IA">
+  <div class="ex-block">
+    <div id="extractionsList" class="ex-list"></div>
+    <div id="extractionsEmpty" class="muted">Todavía no hay extracciones.</div>
+  </div>
+</section>
+
+</div>
+
+<div id="panelBottom" aria-label="Herramientas">
+
+    <!-- Prompts rápidos -->
+    <div id="ai-quick-prompts" class="row" style="flex-wrap:wrap; gap:6px; margin-top:8px">
+      <button class="btn subtle" data-pprompt="Valoración de riesgo prequirúrgico con los datos extraidos del paciente, determinando si el riesgo combinado clinico-quirurgico de acuerdo a Consenso Argentino de Evaluación de Riesgo Cardiovascular en Cirugía no Cardiaca 2020: Bajo, Moderado o Alto, y alguna consideracion previa">Riesgo prequirúrgico</button>
+      <button class="btn subtle" data-prompt="Revisar interacciones medicamentosas y precauciones de la medicacion que figura en el texto presentado. Da algún consejo concreto">Interacciones medicamentosas</button>
+      <button class="btn subtle" data-pprompt="Pedir al usuario que indique qué justificar y luego proponer un justificativo breve basado en consensos de cardiología.">Justificativos OS</button>
+      <button class="btn subtle" data-prompt="Hacer un resumen clínico conciso utilizando los textos extraidos y una breve interpretacion del caso, actuando como un medico colaborador dando una segunda opinion con evidencia cientifica.">Segunda Opinion</button>
+      <button class="btn subtle" data-pprompt="El medico de internacion te proporcionara distintos datos mediante extracciones: Signos vitales, balance hidrico, medicacion actual, resultado de imagenes. Con esos datos mas el contexto que te envie el medico, armaras el texto de una evolucion diaria de internacion, por ejemplo: Paciente cursando internacion hemodinamicamente estable signos vitales promedios, balance hidrico ultimas 24hs, valores de laboratorio con leve interpretacion, resultado de informe de imagen, consideraciones">Evoluciones diarias</button>
+      <button class="btn subtle" data-prompt="Con los datos extraídos, calcular el clearence de creatinina (CKD-EPI). Mostrar directamente el resultado, no la formula">Calcular Clearence</button>
+      <button class="btn subtle" data-pprompt="El medico te pedira que calcules un Scores de riesgo seleccionado de una lista, con los datos extraidos que te provee, si falta algo menciona el faltante">Scores de Riesgo</button>
+      <button class="btn subtle" data-prompt="Actua como contraparte o antagonista y justifica errores o discrepancias sobre los diagnosticos o las decisiones presentadas">"Contraparte"</button>
+       <button class="btn subtle" data-prompt="El medico esta trabado no sabe como avanzar con el caso, sugerile pasos a seguir y/o pendientes">"¿Como sigo?"</button>
+    </div>
+  </section>
+
+
+</section>
+
+
+    </div>
+
+
+ 
+  <section id="registroLocalSection" style="display:none">
+  <label>Estudio activo:</label>
+ 
+    <select id="estudio"></select>
+ <div class="acciones-estudio-grid">
+    <button id="btnAbrirModal" class="btn span-2">➕ Nuevo Estudio</button>
+  <button id="btnEditarEstudio" class="btn span-2">✏️ Editar</button>
+  <button id="btnEliminarEstudio" class="btn span-2">🗑 Eliminar</button>
+  <!-- Fila 2 -->
+  <button id="btnExportarEstudio" class="btn span-2">⬆️ Exportar estudio</button>
+
+  <!-- Importar como botón (dispara el input oculto) -->
+<button id="btnImportarEstudio">⬇️ Importar estudio</button>
+<input id="inputImportEstudio" type="file" accept=".json,.medreg.json" style="display:none">
+
+</div>
+
+
+  <!-- Modal existente (ABM de estudio) -->
+  <div id="modal" class="medreg-modal">
+    <div class="modal-content">
+      <h3>🧪 Nuevo estudio</h3>
+      <input type="text" id="nombreEstudio" placeholder="Nombre del estudio">
+
+      <select id="categoriaSelect">
+        <option value="">-- Categoría --</option>
+        <option>Datos Personales</option>
+        <option>Antecedentes</option>
+        <option>Riesgo</option>
+        <option>Laboratorio</option>
+        <option>Medicacion</option>
+      </select>
+
+      <!-- Autocompletado (clave — subcategoría) -->
+      <input type="text" id="claveInput" list="sugerencias" placeholder="Ej: HbA1c">
+      <datalist id="sugerencias"></datalist>
+
+      <div id="formNuevoCriterio" class="oculto">
+        <p>🆕 Criterio no reconocido. Agregalo manualmente:</p>
+        <select id="catNueva">
+          <option value="Antecedentes">Antecedentes</option>
+          <option value="Riesgo">Riesgo</option>
+          <option value="Laboratorio">Laboratorio</option>
+          <option value="Medicacion">Medicación</option>
+          <option value="Datos Personales">Datos Personales</option>
+        </select>
+        <input type="text" id="claveNueva" placeholder="Nombre del criterio">
+        <input type="text" id="sinonimosNuevos" placeholder="Sinónimos separados por coma">
+        <button id="btnGuardarNuevoCriterio">✅ Agregar a la base</button>
+      </div>
+
+      <div id="opcionesValor" class="oculto">
+        <select id="operador">
+          <option value=">">Mayor que</option>
+          <option value="<">Menor que</option>
+          <option value="=">Igual a</option>
+          <option value="entre">Entre</option>
+        </select>
+        <div class="inline-group">
+          <input type="number" id="valor1" placeholder="Valor">
+          <input type="number" id="valor2" placeholder="y" class="oculto">
+        </div>
+      </div>
+
+      <div id="opcionesSexo" class="oculto">
+        <select id="valorSexo">
+          <option value="todos">Todos</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+        </select>
+      </div>
+
+      <button id="btnAgregarCriterio">➕ Agregar criterio</button>
+      <div id="preview"></div>
+      <div class="inline-group">
+        <button id="btnGuardarEstudio">💾 Guardar estudio</button>
+        <button id="btnCerrarModal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="contenedorCriterios"></div>
+
+  <label>📝 Observación:</label>
+  <textarea id="obs" rows="3"></textarea>
+
+    <span id="sessionCount" class="session-count" style="font-size:12px;color:#736f6f"></span>
+
+  <div class="inline-group">
+    <button id="btnPreMatch">🔍 Pre-Match</button>
+    <button id="btnAnalizar">🔍 Analizar</button>
+  </div>
+    <div class="inline-group">
+    <button id="btnRegistrar">📌 Registrar</button>
+   
+    <button id="btnLimpiar">🧹 Limpiar Todo</button>
+    
+  </div>
+
+  <!-- NUEVO bloque de listado de sesión -->
+  <div class="inline-group">
+    <button id="btnExportListado" title="Descargar CSV de la sesión">⬇️ Descargar listado</button>
+    <button id="btnClearListado"  title="Borrar todo el acumulado" style="background:#571111">🗑 Borrar listado</button>
+    
+  </div>
+ 
+
+
+  <!-- ==== Extracciones + Análisis IA (INVESTIGADOR) ==== -->
+<div id="investigadorExtractions" class="card" style="display:none;margin-top:10px">
+  <div class="title">Extracciones</div>
+  <div id="extractionListInv" class="ex-list">
+    <div id="extractionsEmptyInv" class="muted">Aún no hay extracciones guardadas.</div>
+    <div id="extractionsListInv"></div>
+  </div>
+</div>
+
+<div id="investigadorAnalisisRow" class="inline-group" style="margin-top:8px;display:none">
+  <button id="btnExtractHCInv" title="Extraer HC activa" style="width:auto">🧩 Extraer HC</button>
+  <button id="btnAnalisisIAInv" style="width:auto">🧠 Análisis IA</button>
+  <button id="btnLimpiarAnalisisInv" class="btn peligro">Limpiar análisis</button>
+
+</div>
+
+<div id="invIaLoading" class="inv-loading">
+  <span>Analizando criterios con IA…</span>
+  <span class="inv-spinner"></span>
+</div>
+
+
+<textarea id="iaAnalisisOutInv"
+          rows="5"
+          style="display:none;width:100%;margin-top:30px;font-size:16px"
+          placeholder="Resultado del Análisis IA (criterios detectados y observaciones)…"></textarea>
+<!-- ==== /Extracciones + Análisis IA (INVESTIGADOR) ==== -->
+
+</section>
+
+<!-- Protocolos -->
+<section id="protocolosSection" style="display:none">
+  <div class="inline-group">
+    <button id="btnAnalizarIA">🔍 Analizar con IA</button>
+  </div>
+  <div id="protoList"></div>
+</section>
+
+<!-- Agenda -->
+<section id="agendaSection" style="display:none">
+  <div class="categoria">
+    <label>📆 Agenda (Google Calendar)</label>
+    <div class="inline-group">
+      <button id="glogin">Conectar con Google</button>
+      <button id="glogout">Salir</button>
+    </div>
+    <div class="card p-2 mb-3">
+      <div><b>Nuevo evento</b></div>
+      <input id="evt-title" type="text" placeholder="Título del evento">
+      <textarea id="evt-desc" rows="2" placeholder="Descripción (opcional)"></textarea>
+      <div class="inline-group">
+        <input id="evt-start" type="datetime-local">
+        <input id="evt-end" type="datetime-local">
+      </div>
+      <button id="evt-create">Crear evento</button>
+    </div>
+    <div><b>Próximos eventos</b></div>
+    <div id="events-list" style="max-height:200px;overflow:auto;font-size:13px"></div>
+  </div>
+
+
+
+</section>
+
+<!-- Notas -->
+<section id="notasSection" style="display:none">
+  <div class="categoria">
+    <label>📝 Notas rápidas</label>
+    <input id="nota-title" type="text" placeholder="Título (ej. Pendiente UCO)">
+    <textarea id="nota-text" rows="3" placeholder="Escribí tu nota..."></textarea>
+    <div class="inline-group">
+      <button id="nota-add">Agregar</button>
+      <button id="nota-clear">Limpiar</button>
+    </div>
+    <hr>
+    <div id="notas-list" style="max-height:200px;overflow:auto;font-size:13px"></div>
+  </div>
+
+
+  
+</section>
+
+
+<!-- Modal REGISTRO -->
+<div id="registroModal" class="medreg-modal">
+  <div class="modal-content">
+    <h3>📌 Registrar caso</h3>
+    <div class="inline-group">
+      <input id="reg_apellido" placeholder="Apellido (opcional)">
+      <input id="reg_nombre"   placeholder="Nombre (opcional)">
+    </div>
+    <div class="inline-group">
+      <input id="reg_dni" placeholder="DNI (opcional)">
+      <input id="reg_id"  placeholder="ID interno (opcional)">
+    </div>
+    <hr style="margin:10px 0">
+<div>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+    <b>Campos libres</b>
+    <button id="reg_add_field" style="width:auto;background:#0ea5e9">+ Agregar campo</button>
+  </div>
+  <div id="reg_fields" style="margin-top:6px;display:flex;flex-direction:column;gap:6px"></div>
+  <div style="font-size:12px;color:#64748b;margin-top:4px">
+    Otros datos <i>Etiqueta → Valor</i> (ej.: Centro, Investigador, Teléfono, etc.).
+  </div>
+</div>
+
+    <p style="font-size:12px;color:#64748b;margin-top:4px">
+      Al aceptar, se suman a la sesión los criterios tildados (con Observación).
+    </p>
+    <div class="inline-group" style="margin-top:6px">
+      <button id="reg_accept" style="width:auto">Aceptar</button>
+      <button id="reg_cancel"  style="width:auto;background:#6b7280">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Modal para editar botones rápidos -->
+  <div id="quickPromptsModal" class="medreg-modal" aria-hidden="true">
+    <div class="backdrop"></div>
+    <div class="box">
+      <div class="header">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+          <h3 style="margin:0;font-size:15px;">Editar botones rápidos</h3>
+          <button type="button" class="close" id="qpClose" aria-label="Cerrar">×</button>
+        </div>
+        <p class="muted" style="margin-top:6px;font-size:12px;">
+          Configurá los botones rápidos del asistente. Se guardan en tu cuenta de Chrome y te acompañan en cualquier PC donde uses MedReg.
+        </p>
+      </div>
+      <div class="body">
+        <div id="qpList" style="display:flex;flex-direction:column;gap:8px;"></div>
+
+        <button type="button" id="qpAdd" class="btn subtle" style="margin-top:8px;">
+          ➕ Agregar botón
+        </button>
+
+   <p class="muted" style="font-size: 12px; margin-top: 4px;">
+  Usá etiquetas cortas y claras. El texto del prompt es lo que se envía a la IA cuando presionás cada botón rápido del asistente.
+</p>
+
+      </div>
+      <div class="footer">
+        <button type="button" id="qpCancel" class="btn subtle">Cerrar</button>
+        <button type="button" id="qpSave" class="btn primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal para importar / exportar preset de la botonera -->
+  <div id="quickPromptsPresetModal" class="medreg-modal" aria-hidden="true">
+    <div class="backdrop"></div>
+    <div class="box">
+      <div class="header">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+          <h3 style="margin:0;font-size:15px;">Preset de botones rápidos</h3>
+          <button type="button" class="close" id="qpPresetClose" aria-label="Cerrar">×</button>
+        </div>
+        <p class="muted" style="margin-top:6px;font-size:12px;">
+          Acá podés copiar el preset actual o pegar uno que te compartieron
+          para usar la misma botonera en otra PC, perfil o especialidad.
+        </p>
+      </div>
+      <div class="body">
+        <textarea id="qpPresetTextarea"
+          style="width:100%;min-height:170px;border-radius:8px;border:1px solid #1f2937;background:#020617;padding:8px 10px;font-size:12px;resize:vertical;white-space:pre;"></textarea>
+        <p class="muted" style="margin-top:6px;font-size:11px;">
+          El formato es JSON. Se usan los campos <code>label</code>, <code>text</code>,
+          y cuando aplica, <code>kind</code> (<code>"prompt"</code> o <code>"param"</code>)
+          y <code>paramKey</code> para los formularios guiados (preqx, justificativo OS, scores, evolución).
+        </p>
+      </div>
+      <div class="footer">
+        <button type="button" id="qpPresetCancel" class="btn subtle">Cerrar</button>
+        <button type="button" id="qpPresetCopy" class="btn subtle">Copiar preset</button>
+        <button type="button" id="qpPresetApply" class="btn primary">Importar preset</button>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="agenteDeepSection" class="card" style="display:none;margin-top:10px;">
+  <h2 style="margin:0 0 10px;font-size:16px;color:var(--brand);">🎙️ Documentación por Voz</h2>
+
+  <div class="preset-container" style="margin-bottom: 12px;">
+    <div id="preset-buttons" style="display: flex; gap: 8px;">
+      <button type="button" class="preset-btn" data-preset="soap" title="Nota de Evolución estructurada (S, O, A, P)">Nota SOAP</button>
+      <button type="button" class="preset-btn" data-preset="study" title="Informe de estudios complementarios (Hallazgos, Interpretación, Conclusión)">Informe Estudio</button>
+      <button type="button" class="preset-btn" data-preset="evolution" title="Evolución clínica diaria (Estado general, signos vitales, balance, examen fisico, laboratorio/estudios del día y plan a seguir con sugerencia concisa)">Evolución Internación</button>
+    </div>
+  </div>
+
+  <div id="recording-controls" style="display: flex; gap: 8px; margin-bottom: 15px; align-items: center;">
+    <button type="button" id="btnRecord" class="btn" style="background: var(--ok); color: var(--bg); flex-grow: 1;">
+      <span id="record-icon">▶️</span> Grabar
+    </button>
+    <button type="button" id="btnPause" class="btn" style="background: #ffc107; color: var(--bg);" disabled>⏸️ Pausar</button>
+    <button type="button" id="btnStop" class="btn" style="background: var(--err); color: var(--bg);" disabled>⏹️ Finalizar</button>
+  </div>
+
+  <p id="recording-status" style="margin: 0 0 10px; font-size: 13px; color: var(--muted); min-height: 18px;">
+    Listo para comenzar.
+  </p>
+
+  <h3 style="margin: 15px 0 5px; font-size: 14px; color: var(--text);">📋 Nota Generada:</h3>
+  <textarea id="soap-output" rows="10" placeholder="El resultado aparecerá aquí..."
+    style="width:100%; min-height: 400px; border-radius:8px; border:1px solid var(--stroke); background:var(--bg2); padding:10px; font-size:14px; color:var(--text); resize:vertical; white-space:pre-wrap;"></textarea>
+
+  <button type="button" id="btnCopySoap" class="btn" style="width: 100%; margin-top: 8px; background: var(--brand);" disabled>
+    Copiar Nota al Portapapeles
+  </button>
+  <button type="button" id="btnClearAll" class="btn subtle">🧹 Limpiar todo</button>
+</section>
+
+
+
+  <script src="medreg_local_demo.js"></script>
+</body>
+</html>
